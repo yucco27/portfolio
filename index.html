@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>あなたの名前 | Webデザイン学習中のポートフォリオ</title>
+  <meta name="description" content="Webデザイン学習中の簡易ポートフォリオ。自己紹介・リンク・制作メモを掲載。随時更新します。" />
+  <meta name="color-scheme" content="light dark">
+  <meta property="og:title" content="あなたの名前 | ポートフォリオ" />
+  <meta property="og:description" content="Webデザインと小さなWebアプリの学習記録をまとめています。" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="" />
+  <meta property="og:url" content="" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🧡</text></svg>">
+  <style>
+    :root{
+      --bg: #ffffff; --fg:#1e293b; --muted:#64748b; --accent:#ef4444; --line:#e5e7eb; --card:#f8fafc;
+    }
+    @media (prefers-color-scheme: dark){
+      :root{ --bg:#0b1220; --fg:#e5e7eb; --muted:#93a3b8; --accent:#f97316; --line:#142033; --card:#0f172a; }
+    }
+    /* Reset (最小限) */
+    *,*::before,*::after{ box-sizing:border-box; }
+    body{ margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, "Hiragino Kaku Gothic ProN", "BIZ UDPGothic", "Noto Sans JP", sans-serif; color:var(--fg); background:var(--bg); line-height:1.6; }
+    a{ color:inherit; text-decoration: none; }
+    a:hover{ text-decoration: underline; }
+    img{ max-width:100%; height:auto; display:block; }
+
+    /* Layout */
+    .wrap{ max-width: 920px; margin: 0 auto; padding: 24px; }
+    header{ display:flex; align-items:center; gap:20px; padding: 24px; border:1px solid var(--line); border-radius: 16px; background: var(--card); }
+    .avatar{ width:84px; height:84px; border-radius:50%; object-fit:cover; border:2px solid var(--line); }
+
+    h1{ font-size: clamp(22px, 2.6vw, 32px); margin: 0 0 4px; }
+    .subtitle{ color:var(--muted); font-size: 14px; }
+
+    .grid{ display:grid; grid-template-columns: 1fr; gap:16px; margin-top: 24px; }
+    @media(min-width: 720px){
+      .grid{ grid-template-columns: 1.1fr 0.9fr; }
+    }
+
+    .card{ border:1px solid var(--line); background:var(--card); border-radius:16px; padding:20px; }
+    .card h2{ font-size:18px; margin:0 0 12px; }
+    .lead{ font-size: 15px; }
+    .list{ list-style:none; padding:0; margin:0; display:grid; gap:10px; }
+    .pill{ display:inline-flex; align-items:center; gap:8px; padding:8px 12px; border-radius:999px; border:1px solid var(--line); background:transparent; font-size:14px; }
+    .pill .dot{ width:8px; height:8px; border-radius:50%; background:var(--accent); display:inline-block; }
+
+    .links{ display:grid; grid-template-columns: 1fr 1fr; gap:10px; }
+    @media(min-width: 480px){ .links{ grid-template-columns: repeat(3, 1fr);} }
+    .linkbtn{ display:flex; align-items:center; justify-content:center; padding:12px; border-radius:12px; border:1px solid var(--line); background:transparent; text-align:center; font-weight:600; }
+    .linkbtn:hover{ background: rgba(239, 68, 68, 0.08); text-decoration:none; }
+
+    footer{ text-align:center; color:var(--muted); font-size:12px; padding:28px 12px; }
+    .sep{ height:1px; background: var(--line); margin: 24px 0; border:0; }
+
+    /* Projects (後から増やす場所) */
+    .projects{ display:grid; grid-template-columns: 1fr; gap:14px; }
+    @media(min-width: 720px){ .projects{ grid-template-columns: repeat(2, 1fr);} }
+    .project{ border:1px solid var(--line); border-radius:14px; overflow:hidden; background:var(--bg); }
+    .project a{ display:block; }
+    .project .thumb{ aspect-ratio: 16/9; background:var(--card); display:flex; align-items:center; justify-content:center; font-size:12px; color:var(--muted); }
+    .project .body{ padding:14px; }
+    .project h3{ margin:0 0 4px; font-size:16px; }
+    .project p{ margin:0; color:var(--muted); font-size: 14px; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <!-- ヒーロー / ヘッダー -->
+    <header>
+      <!-- 顔写真は images/avatar.jpg などに差し替え。なければ絵文字でもOK -->
+      <img class="avatar" src="https://placehold.co/168x168/png" alt="プロフィール写真の代替画像" />
+      <div>
+        <h1>あなたの名前</h1>
+        <p class="subtitle">Webデザイン学習中｜シンプルで見やすいUIが好き｜小さなWebアプリにも挑戦中</p>
+        <p class="lead">現在は <strong>GitHub Pages</strong> でポートフォリオを構築中。色や余白、読みやすさを大切に制作しています。ITパスポートの学習メモも更新予定です。</p>
+      </div>
+    </header>
+
+    <div class="grid">
+      <!-- 左：About / Projects -->
+      <section class="card">
+        <h2>自己紹介</h2>
+        <p>東京都在住。デザイン寄りのWeb制作を勉強しています。Flexbox / Grid を使った心地よいレイアウト、読みやすいタイポグラフィ、アクセシビリティに配慮した構造化を意識しています。今後は JavaScript で小さなツールを作り、実績として公開していく予定です。</p>
+        <hr class="sep" />
+        <h2>最近の学習トピック</h2>
+        <ul class="list">
+          <li class="pill"><span class="dot" aria-hidden="true"></span>HTMLのセマンティクス</li>
+          <li class="pill"><span class="dot" aria-hidden="true"></span>CSS Grid / Flexbox</li>
+          <li class="pill"><span class="dot" aria-hidden="true"></span>JavaScript基礎（タブ/モーダル）</li>
+          <li class="pill"><span class="dot" aria-hidden="true"></span>ITパスポート（セキュリティ/ネットワーク）</li>
+        </ul>
+        <hr class="sep" />
+        <h2>小さな作品（仮置き）</h2>
+        <div class="projects">
+          <!-- 作品カードの雛形。増やすときはこの<div class="project">を複製して差し替え -->
+          <article class="project">
+            <a href="#" aria-label="作品Aの詳細ページへ（後日リンク差し替え）">
+              <div class="thumb">サムネイル画像（後日差し替え）</div>
+              <div class="body">
+                <h3>作品A：カードレイアウト練習</h3>
+                <p>Gridで組んだカードUI。余白と階層で読みやすさを意識。</p>
+              </div>
+            </a>
+          </article>
+          <article class="project">
+            <a href="#" aria-label="作品Bの詳細ページへ（後日リンク差し替え）">
+              <div class="thumb">サムネイル画像（後日差し替え）</div>
+              <div class="body">
+                <h3>作品B：JSタブ切り替え</h3>
+                <p>ネイティブJSでシンプルなタブ。アクセシブルな実装に挑戦。</p>
+              </div>
+            </a>
+          </article>
+        </div>
+      </section>
+
+      <!-- 右：リンク/連絡先 -->
+      <aside class="card">
+        <h2>リンク</h2>
+        <div class="links">
+          <a class="linkbtn" href="https://github.com/your-username" target="_blank" rel="noopener">GitHub</a>
+          <a class="linkbtn" href="#" target="_blank" rel="noopener">X（Twitter）</a>
+          <a class="linkbtn" href="#" target="_blank" rel="noopener">Instagram</a>
+        </div>
+        <hr class="sep" />
+        <h2>連絡先</h2>
+        <p class="lead">メール：<a href="mailto:your.name@example.com">your.name@example.com</a></p>
+        <p class="subtitle">※ フォームは後日追加予定。SNSのDMでも可。</p>
+        <hr class="sep" />
+        <h2>更新メモ</h2>
+        <ul class="list">
+          <li>2025-08-20 初回公開（自己紹介＋リンク＋仮作品）</li>
+        </ul>
+      </aside>
+    </div>
+
+    <footer>
+      <small>© <span id="y"></span> あなたの名前 — Built on GitHub Pages</small>
+    </footer>
+  </div>
+
+  <script>
+    // フッターの年を自動更新
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
